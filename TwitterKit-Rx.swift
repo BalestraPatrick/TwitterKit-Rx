@@ -2,7 +2,7 @@
 //  TwitterKit-Rx.swift
 //
 //  Created by Patrick Balestra on 1/8/16.
-//
+//  https://github.com/BalestraPatrick/TwitterKit-Rx
 //
 
 import Foundation
