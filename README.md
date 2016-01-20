@@ -12,11 +12,10 @@ Twitter.sharedInstance()
 	.rx_loadUserWithID(userID, client: self.session.client!)
 	.subscribe(onNext: { user in
        	// Use of the TWTRObject
-			observer.onNext(user)
-			observer.onCompleted()
+
       	}, onError: { error in
           print("Failed in requesting user data with error: \(error)!")
-			observer.onError(error)
+
 		}, onCompleted: nil, onDisposed: nil)
 	.addDisposableTo(self.disposebag)
 ```
