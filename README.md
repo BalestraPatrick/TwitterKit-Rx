@@ -11,11 +11,9 @@ let disposeBag = DisposeBag()
 Twitter.sharedInstance()
 	.rx_loadUserWithID(userID, client: self.session.client!)
 	.subscribe(onNext: { user in
-       	// Use of the TWTRObject
-
+       	// Use the TWTRObject
       	}, onError: { error in
           print("Failed in requesting user data with error: \(error)!")
-
 		}, onCompleted: nil, onDisposed: nil)
 	.addDisposableTo(self.disposebag)
 ```
