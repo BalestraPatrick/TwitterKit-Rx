@@ -34,25 +34,6 @@ public extension Twitter {
         }
     }
     
-    /// Triggers user authentication with Twitter.
-    ///
-    /// - parameter client:  API client used to load the request.
-    ///
-    /// - returns: The Guest user session.
-    public func rx_logInGuest(client: TWTRAPIClient) -> Observable<TWTRGuestSession> {
-        return Observable.create { (observer: AnyObserver<TWTRGuestSession>) -> Disposable in
-            self.logInGuestWithCompletion { session, error in
-                guard let session = session else {
-                    observer.onError(error ?? TwitterError.Unknown)
-                    return
-                }
-                observer.onNext(session)
-                observer.onCompleted()
-            }
-            return AnonymousDisposable { }
-        }
-    }
-    
     /// Loads a Twitter User.
     ///
     /// - parameter userID:  ID of the user account to be fetched.
